@@ -36,27 +36,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <header className="border-b border-border py-8">
-        <div className="mx-auto max-w-4xl px-5">
-          <div className="flex items-baseline justify-between">
-            <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-              The Journal
-            </h1>
-            <nav className="flex gap-6 text-sm font-medium text-foreground-muted md:gap-8 md:text-base">
-              <a href="#" className="transition-colors hover:text-foreground">
-                Essays
-              </a>
-              <a href="#" className="transition-colors hover:text-foreground">
-                About
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-4xl px-5">
+    <main className="mx-auto max-w-4xl px-5">
         {/* Featured Article */}
         <article className="border-b border-border py-16 md:py-24">
           <div className="mx-auto max-w-4xl">
@@ -163,15 +143,5 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border px-6 py-12 text-center md:px-12 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-          <p className="font-light text-sm text-foreground-muted">
-            © 2024 The Journal. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
   )
 }
