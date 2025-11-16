@@ -40,7 +40,9 @@ export default function RootLayout({
             <div className="mx-auto max-w-4xl px-5">
               <div className="flex items-baseline justify-between">
                 <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3xl text-balance">
-                  <Link href="/">Kevin Crawford, Software Engineer</Link>
+                  <Link className="hover:text-accent" href="/">
+                    Kevin Crawford, Software Engineer
+                  </Link>
                 </h1>
                 <nav className="flex gap-6 text-sm font-medium text-foreground-muted md:gap-8 md:text-base">
                   <Link
