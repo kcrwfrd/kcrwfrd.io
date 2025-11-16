@@ -36,32 +36,29 @@ export default async function PostPage({
     return (
       <article className="mx-auto w-full max-w-4xl px-5">
         {/* Post Header */}
-        <header className="mb-12 border-b border-slate-200 pb-8 dark:border-slate-700">
-          <div className="mb-4 flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-400">
-            <time>{metadata.date}</time>
+        <header className="mb-12 border-b border-border pb-8">
+          <div className="mb-6 flex items-center gap-3 text-sm font-medium text-foreground-muted">
+            <time>
+              {new Date(metadata.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
             {metadata.tags && metadata.tags.length > 0 && (
               <>
-                <span className="text-slate-200 dark:text-slate-700">•</span>
-                <div className="flex gap-2">
-                  {metadata.tags.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="text-sky-600 dark:text-sky-400"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <span className="text-border">•</span>
+                <span className="text-accent">{metadata.tags[0]}</span>
               </>
             )}
           </div>
 
-          <h1 className="mb-4 font-display text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
+          <h1 className="mb-8 font-display text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
             {metadata.title}
           </h1>
 
           {metadata.excerpt && (
-            <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-400">
+            <p className="max-w-2xl font-light text-xl leading-relaxed text-foreground-muted md:text-2xl md:leading-relaxed">
               {metadata.excerpt}
             </p>
           )}

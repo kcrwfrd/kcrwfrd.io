@@ -17,7 +17,6 @@ export default async function Home() {
               month: 'long',
               day: 'numeric',
             }),
-            readTime: '5 min read',
             category: metadata.tags[0] || 'Article',
           }}
           slug={slug}
@@ -31,12 +30,11 @@ type Post = {
   title: string
   excerpt: string
   date: string
-  readTime: string
   category: string
 }
 
 function Post({
-  post: { title, excerpt, date, readTime, category },
+  post: { title, excerpt, date, category },
   slug,
 }: {
   post: Post
@@ -45,11 +43,9 @@ function Post({
   return (
     <article className="border-b border-border last:border-none py-16 md:py-24">
       <div className="mb-6 flex items-center gap-3 text-sm font-medium text-foreground-muted">
-        <span className="text-accent">{category}</span>
-        <span className="text-border">•</span>
         <time>{date}</time>
         <span className="text-border">•</span>
-        <span>{readTime}</span>
+        <span className="text-accent">{category}</span>
       </div>
 
       <h2 className="mb-8 font-display text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
