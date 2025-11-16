@@ -1,0 +1,101 @@
+export const metadata = {
+  title: 'Getting Started with MDX in Next.js',
+  date: '2025-11-17',
+  excerpt: 'A comprehensive guide to setting up MDX in your Next.js application, including configuration, best practices, and advanced patterns.',
+  tags: ['Next.js', 'MDX', 'Tutorial', 'TypeScript'],
+}
+
+Setting up MDX in Next.js 16 is straightforward, but there are some best practices and patterns that can make your blog even better.
+
+## Installation
+
+First, install the required dependencies:
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+```
+
+## Configuration
+
+Update your `next.config.ts` to add MDX support:
+
+```typescript
+import type { NextConfig } from 'next'
+import createMDX from '@next/mdx'
+
+const nextConfig: NextConfig = {
+  reactCompiler: true,
+}
+
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+})
+
+export default withMDX(nextConfig)
+```
+
+## Project Structure
+
+Organize your posts in a clean directory structure:
+
+```
+posts/
+├── hello-new-world/
+│   └── index.mdx
+├── getting-started-with-mdx/
+│   └── index.mdx
+└── ...
+```
+
+Each post lives in its own directory, making it easy to add images or other assets later.
+
+## Metadata Pattern
+
+Use TypeScript exports for type-safe metadata:
+
+```typescript
+export const metadata = {
+  title: 'Your Post Title',
+  date: '2025-11-16',
+  excerpt: 'A brief description',
+  tags: ['tag1', 'tag2'],
+}
+```
+
+## Dynamic Routes
+
+Create a dynamic route at `src/app/posts/[slug]/page.tsx` with `generateStaticParams`:
+
+```typescript
+export async function generateStaticParams() {
+  const slugs = getAllPostSlugs()
+  return slugs.map((slug) => ({ slug }))
+}
+```
+
+This ensures all your posts are statically generated at build time for optimal performance.
+
+## Custom Components
+
+Enhance your MDX with custom components in `src/mdx-components.tsx`:
+
+```typescript
+const components = {
+  h1: ({ children }) => (
+    <h1 className="mb-8 text-4xl font-bold">{children}</h1>
+  ),
+  // ... more components
+} satisfies MDXComponents
+```
+
+## Benefits
+
+This setup gives you:
+
+1. **Static Generation**: Lightning-fast page loads
+2. **Type Safety**: Full TypeScript support
+3. **Developer Experience**: Write content in Markdown
+4. **Flexibility**: Add React components when needed
+5. **SEO Friendly**: Pre-rendered HTML for search engines
+
+Happy blogging!

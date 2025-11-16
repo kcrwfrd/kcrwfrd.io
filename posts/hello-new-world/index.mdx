@@ -1,0 +1,53 @@
+export const metadata = {
+  title: 'Hello, New World',
+  date: '2025-11-16',
+  excerpt: 'Welcome to my new blog powered by Next.js and MDX. Learn about the setup and what makes this stack powerful.',
+  tags: ['Next.js', 'MDX', 'Blog'],
+}
+
+Welcome to my new blog! This is my first post using **Next.js 16** with **MDX** support.
+
+## What is MDX?
+
+MDX is a format that lets you seamlessly write JSX in your markdown documents. This means you can import and use React components directly in your content!
+
+Here's what makes it powerful:
+
+- **Write in Markdown**: Use the simple syntax you already know
+- **Embed React Components**: Add interactive elements anywhere
+- **Type-safe**: Full TypeScript support
+- **Fast**: Static generation with Next.js
+
+## Code Example
+
+You can include code blocks with syntax highlighting:
+
+```typescript
+export async function generateStaticParams() {
+  const slugs = getAllPostSlugs()
+  return slugs.map((slug) => ({ slug }))
+}
+```
+
+## Lists Work Great
+
+### Unordered Lists
+
+- First item
+- Second item
+- Third item with **bold text**
+
+### Ordered Lists
+
+1. Install dependencies
+2. Configure Next.js
+3. Create your first post
+4. Build and deploy
+
+## Blockquotes
+
+> MDX combines the best of both worlds: the simplicity of Markdown with the power of React components.
+
+## What's Next?
+
+I'm excited to share more content about web development, JavaScript, and building modern applications. Stay tuned for more posts!
