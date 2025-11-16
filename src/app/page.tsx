@@ -37,111 +37,72 @@ export default function Home() {
 
   return (
     <main className="mx-auto max-w-4xl px-5">
-        {/* Featured Article */}
-        <article className="border-b border-border py-16 md:py-24">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-6 flex items-center gap-3 text-sm font-medium text-foreground-muted">
-              <span className="text-accent">{featuredPost.category}</span>
-              <span className="text-border">•</span>
-              <time>{featuredPost.date}</time>
-              <span className="text-border">•</span>
-              <span>{featuredPost.readTime}</span>
-            </div>
+      {/* Featured Article */}
+      <article className="border-b border-border py-16 md:py-24">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-6 flex items-center gap-3 text-sm font-medium text-foreground-muted">
+            <span className="text-accent">{featuredPost.category}</span>
+            <span className="text-border">•</span>
+            <time>{featuredPost.date}</time>
+            <span className="text-border">•</span>
+            <span>{featuredPost.readTime}</span>
+          </div>
 
-            <h2 className="mb-8 font-display text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              {featuredPost.title}
-            </h2>
+          <h2 className="mb-8 font-display text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+            {featuredPost.title}
+          </h2>
 
-            <p className="mb-12 max-w-2xl font-light text-xl leading-relaxed text-foreground-muted md:text-2xl md:leading-relaxed">
-              {featuredPost.excerpt}
-            </p>
+          <p className="mb-12 max-w-2xl font-light text-xl leading-relaxed text-foreground-muted md:text-2xl md:leading-relaxed">
+            {featuredPost.excerpt}
+          </p>
 
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 font-display text-lg font-medium text-foreground transition-colors hover:text-accent"
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 font-display text-lg font-medium text-foreground transition-colors hover:text-accent"
+          >
+            Read article
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Read article
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        {/* Recent Posts Grid */}
-        <section className="py-16 md:py-24">
-          <h3 className="mb-12 font-display text-2xl font-semibold text-foreground md:text-3xl">
-            Recent Writing
-          </h3>
-
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
-            {recentPosts.map((post, index) => (
-              <article key={index} className="group">
-                <div className="mb-4 flex items-center gap-3 text-xs font-medium text-foreground-muted md:text-sm">
-                  <span className="text-accent">{post.category}</span>
-                  <span className="text-border">•</span>
-                  <time>{post.date}</time>
-                </div>
-
-                <h4 className="mb-4 font-display text-2xl font-semibold leading-tight text-foreground transition-colors group-hover:text-accent md:text-3xl">
-                  <a href="#">{post.title}</a>
-                </h4>
-
-                <p className="mb-6 font-light leading-relaxed text-foreground-muted">
-                  {post.excerpt}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-foreground-muted">
-                    {post.readTime}
-                  </span>
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-foreground transition-colors hover:text-accent"
-                  >
-                    Read more →
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Newsletter Section */}
-        <section className="border-t border-border py-16 md:py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <h3 className="mb-4 font-display text-3xl font-semibold text-foreground md:text-4xl">
-              Subscribe to the Journal
-            </h3>
-            <p className="mb-8 font-light text-lg leading-relaxed text-foreground-muted">
-              Receive new essays and reflections directly in your inbox. No
-              spam, just thoughtful writing.
-            </p>
-            <form className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 rounded-sm border border-border bg-surface px-6 py-4 text-foreground placeholder:text-foreground-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
-              <button
-                type="submit"
-                className="rounded-sm bg-foreground px-8 py-4 font-medium text-background transition-all hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent/50"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </section>
-      </main>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      {/* Newsletter Section */}
+      <section className="border-t border-border py-16 md:py-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <h3 className="mb-4 font-display text-3xl font-semibold text-foreground md:text-4xl">
+            Subscribe to the Journal
+          </h3>
+          <p className="mb-8 font-light text-lg leading-relaxed text-foreground-muted">
+            Receive new essays and reflections directly in your inbox. No spam,
+            just thoughtful writing.
+          </p>
+          <form className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <input
+              type="email"
+              placeholder="your@email.com"
+              className="flex-1 rounded-sm border border-border bg-surface px-6 py-4 text-foreground placeholder:text-foreground-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+            />
+            <button
+              type="submit"
+              className="rounded-sm bg-foreground px-8 py-4 font-medium text-background transition-all hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent/50"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
   )
 }
