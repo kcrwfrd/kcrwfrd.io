@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Crimson_Pro, Spectral } from 'next/font/google'
+import Link from 'next/link'
+
 import './globals.css'
 
 const crimsonPro = Crimson_Pro({
@@ -38,15 +40,15 @@ export default function RootLayout({
             <div className="mx-auto max-w-4xl px-5">
               <div className="flex items-baseline justify-between">
                 <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3xl text-balance">
-                  Kevin Crawford, Software Engineer
+                  <Link href="/">Kevin Crawford, Software Engineer</Link>
                 </h1>
                 <nav className="flex gap-6 text-sm font-medium text-foreground-muted md:gap-8 md:text-base">
-                  <a
-                    href="#"
+                  <Link
+                    href="/"
                     className="transition-colors hover:text-foreground"
                   >
-                    Essays
-                  </a>
+                    Home
+                  </Link>
                   <a
                     href="#"
                     className="transition-colors hover:text-foreground"
