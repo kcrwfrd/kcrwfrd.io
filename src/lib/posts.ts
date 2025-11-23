@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -24,6 +24,7 @@ export function getAllPostSlugs(): string[] {
   }
 
   const entries = fs.readdirSync(postsDirectory, { withFileTypes: true })
+
   return entries
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
@@ -44,7 +45,9 @@ export async function getAllPosts(): Promise<Post[]> {
 
   // Sort posts by date (newest first)
   return posts.sort((a, b) => {
-    return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+    return (
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+    )
   })
 }
 
